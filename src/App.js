@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Form from "./Form";
 import Items from "./Items";
+import Total from "./Total";
 
 class App extends Component {
   state = {
@@ -33,6 +34,7 @@ class App extends Component {
       <div className='App'>
         <Items items={this.state.items} deleteItem={this.deleteItem} />
         <Form addItem={this.addItem} />
+        <Total items={this.state.items} />
       </div>
     );
   }
