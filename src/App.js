@@ -3,7 +3,7 @@ import "./App.css";
 import Form from "./components/Form";
 import Items from "./components/Items";
 import Total from "./components/Total";
-// import Nutrition from "./components/Nutrition";
+import Nutrition from "./components/Nutrition";
 
 class App extends Component {
   state = {
@@ -36,7 +36,7 @@ class App extends Component {
         <Items items={this.state.items} deleteItem={this.deleteItem} />
         <Form addItem={this.addItem} />
         <Total items={this.state.items} />
-        {/* <Nutrition items={this.state.items} /> */}
+        <Nutrition items={this.state.items} />
       </div>
     );
   }

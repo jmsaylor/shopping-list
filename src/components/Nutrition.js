@@ -1,35 +1,42 @@
-import React from "react";
-const { nutritionAPI } = require("./nutritionAPI");
+import React, { Component } from "react";
+import axios from "axios";
+import fetch from "node-fetch";
 
-const Nutrition = async ({ items }) => {
-  try {
-    const response = await nutritionAPI("bread");
+class Nutrition extends Component {
+  state = {
+    sodium: 0,
+  };
+  componentDidMount() {
+    let headers = {
+      method: "GET",
+      headers: {
+        "x-app-id": "a6d98342",
+        "x-app-key": "7cad6bc66f5b9afeec2311d8d9600129",
+        "x-remote-user-id": "0",
+      },
+    };
+    const food = this.props.items[0].name;
+    console.log("Search Item: ", food);
+    const url =
+      "https://trackapi.nutritionix.com/v2/search/instant?query=" + food;
+    console.log("API url: ", url);
+    axios
+      .get(url, headers)
 
-    const sodium = response[0].nf_sodium;
-  } catch (error) {
-    console.log(error);
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
-  //   let [...responses] = await nutritionAPI(...items[name]);
-
-  //     for (let response in responses) {
-
-  //fiber
-  //sodium
-
-  //plant-based
-
-  //calories
-  //   calories +=
-
-  //processed index
-
-  //meals / days (perishable index)
-  // }
-  return (
-    <div>
-      <span>{sodium}</span>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        <span>Sodium: {this.state.sodium}</span>
+      </div>
+    );
+  }
+}
 
 export default Nutrition;
