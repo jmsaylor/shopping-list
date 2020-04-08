@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
-import fetch from "node-fetch";
+import { apiCall, nutritionAPI } from "../api/nutritionAPI";
 
 class Nutrition extends Component {
   state = {
@@ -25,6 +24,8 @@ class Nutrition extends Component {
 
       .then((res) => {
         console.log(res);
+
+        // this.state.sodium += res.data.common[0].;
       })
       .catch((err) => {
         console.error(err);
