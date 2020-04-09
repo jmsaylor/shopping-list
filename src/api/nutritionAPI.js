@@ -1,5 +1,5 @@
-import axios from "axios";
-import fetch from "node-fetch";
+const axios = require("axios");
+const fetch = require("node-fetch");
 
 async function apiCall(food) {
   let url = `https://trackapi.nutritionix.com/v2/search/instant?query=${food}`;
@@ -47,5 +47,11 @@ async function apiNutrition(search) {
   }
 }
 
+async function display() {
+  console.log(await apiNutrition("bread"));
+}
+
+// display();
+
 exports.apiCall = apiCall;
-exports.nutritionAPI = nutritionAPI;
+exports.nutritionAPI = apiNutrition;
