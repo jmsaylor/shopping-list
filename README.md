@@ -1,5 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Vision
+
+An app that shows you price and nutrition info about your shopping list.
+
+## Learning About the Project
+
+To experiment with the Nutritionix API, `cd` into src/api and run the apiNutrition.js directly, you'll have to
+open the source code and maybe create a test file to get it to do what you want. Also, you can see the JSON
+response in the Dev. Inspector window in the browser
+
+There's also the grocerybear API that attempts to collect price data, but it's a bit defunct. Searching for a
+substitute Using lorem ipsum data for now.
+
 ## Available Scripts
 
 In the project directory, you can run:
